@@ -6,6 +6,7 @@ import (
 	"log"
 	"os"
 	"os/signal"
+	"strings"
 )
 
 var BotToken string
@@ -16,7 +17,8 @@ func Start() {
 	if err != nil {
 		log.Fatal(err.Error())
 	}
-	//discord.AddHandler(Message)
+	discord.AddHandler(newMessage)
+
 	discord.Open()
 
 	defer discord.Close()
@@ -26,4 +28,17 @@ func Start() {
 
 	signal.Notify(c, os.Interrupt)
 	<-c
+}
+
+func newMessage(discord *discordgo.Session, message *discordgo.MessageCreate) {
+
+	if message.Author.ID == discord.State.User.ID {
+		return
+	}
+
+	switch {
+	case strings.Contains(message.Content, "react"):
+		discord.ChannelMessageSend(message.ChannelID, "React")
+	}
+
 }
