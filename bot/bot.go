@@ -37,8 +37,14 @@ func newMessage(discord *discordgo.Session, message *discordgo.MessageCreate) {
 	}
 
 	switch {
-	case strings.Contains(message.Content, "react"):
-		discord.ChannelMessageSend(message.ChannelID, "React")
+	case strings.Contains(message.Content, "docs"):
+		discord.ChannelMessageSend(message.ChannelID,
+			"Eu posso te ajudar com isso! Use !<nome da"+
+				" tecnologia> para receber o link"+
+				" da sua documentação")
+	case strings.Contains(message.Content, "!react"):
+		discord.ChannelMessageSend(message.ChannelID,
+			"Essa é a documentação do React: https://beta.reactjs.org/")
 	}
 
 }
