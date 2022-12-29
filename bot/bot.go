@@ -69,6 +69,14 @@ func newMessage(discord *discordgo.Session, message *discordgo.MessageCreate) {
 		discord.ChannelMessageSend(message.ChannelID,
 			"Essa é a documentação do Express.js: https://expressjs.com/pt-br/")
 
+	case strings.Contains(message.Content, "!ts"):
+		discord.ChannelMessageSend(message.ChannelID,
+			"Essa é a documentação do TypeScript: https://www.typescriptlang.org/pt/docs/")
+
+	case strings.Contains(message.Content, "!typescript"):
+		discord.ChannelMessageSend(message.ChannelID,
+			"Essa é a documentação do TypeScript: https://www.typescriptlang.org/pt/docs/")
+
 	case strings.Contains(message.Content, "!react"):
 		discord.ChannelMessageSend(message.ChannelID,
 			"Essa é a documentação do React: https://beta.reactjs.org/")
