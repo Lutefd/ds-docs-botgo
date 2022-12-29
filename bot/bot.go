@@ -51,9 +51,28 @@ func newMessage(discord *discordgo.Session, message *discordgo.MessageCreate) {
 		discord.ChannelMessageSend(message.ChannelID,
 			"Essa é a documentação do CSS: https://developer.mozilla.org/pt-BR/docs/Web/CSS")
 
+	case strings.Contains(message.Content, "!js"):
+		discord.ChannelMessageSend(message.ChannelID,
+			"Essa é a documentação do JavaScript: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript")
+		discord.ChannelMessageSend(message.ChannelID,
+			"Essa é um dos melhores documentos explicativos do Javascript: https://javascript.info/")
+
+	case strings.Contains(message.Content, "!javascript"):
+		discord.ChannelMessageSend(message.ChannelID,
+			"Essa é a documentação do JavaScript: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript")
+		discord.ChannelMessageSend(message.ChannelID,
+			"Essa é um dos melhores documentos explicativos do Javascript: https://javascript.info/")
+
+	case strings.Contains(message.Content, "!node"):
+		discord.ChannelMessageSend(message.ChannelID,
+			"Essa é a documentação do Node.js: https://nodejs.org/pt-br/docs/")
+		discord.ChannelMessageSend(message.ChannelID,
+			"Essa é a documentação do Express.js: https://expressjs.com/pt-br/")
+
 	case strings.Contains(message.Content, "!react"):
 		discord.ChannelMessageSend(message.ChannelID,
 			"Essa é a documentação do React: https://beta.reactjs.org/")
 
 	}
+
 }
