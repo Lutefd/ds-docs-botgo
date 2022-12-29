@@ -1,7 +1,16 @@
 package main
 
-import "fmt"
+import (
+	"log"
+	"os"
+)
 
 func main() {
-	fmt.Print("Hello World")
+
+	botToken, ok := os.LookupEnv("BOT_TOKEN")
+	if !ok {
+		log.Fatal("BOT_TOKEN não encontrado")
+	}
+	bot.BotToken = botToken
+	bot.Start()
 }
