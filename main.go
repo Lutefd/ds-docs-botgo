@@ -1,6 +1,7 @@
 package main
 
 import (
+	"github.com/Lutefd/ds-docs-botgo/bot"
 	"log"
 	"os"
 )
