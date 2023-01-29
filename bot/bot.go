@@ -81,6 +81,11 @@ func newMessage(discord *discordgo.Session, message *discordgo.MessageCreate) {
 		discord.ChannelMessageSend(message.ChannelID,
 			"Essa é a documentação do React: https://beta.reactjs.org/")
 
+	case strings.Contains(message.Content, "!vite"):
+		discord.ChannelMessageSend(message.ChannelID,
+			"Essa é a documentação do Vite: https://vitejs.dev/guide/")
+		discord.ChannelMessageSend(message.ChannelID,
+			"Para iniciar um novo projeto com Vite(npm) use: ```npm create vite@latest```")
 	}
 
 }
