@@ -87,13 +87,31 @@ func newMessage(discord *discordgo.Session, message *discordgo.MessageCreate) {
 		discord.ChannelMessageSend(message.ChannelID,
 			"Para iniciar um novo projeto com Vite (npm) use: ```npm create vite@latest```")
 
+	case strings.Contains(message.Content, "!Vite"):
+		discord.ChannelMessageSend(message.ChannelID,
+			"Essa é a documentação do Vite: https://vitejs.dev/guide/")
+		discord.ChannelMessageSend(message.ChannelID,
+			"Para iniciar um novo projeto com Vite (npm) use: ```npm create vite@latest```")
+
 	case strings.Contains(message.Content, "!next"):
 		discord.ChannelMessageSend(message.ChannelID,
 			"Essa é a documentação do Next.js: https://nextjs.org/docs/getting-started")
 		discord.ChannelMessageSend(message.ChannelID,
 			"Para iniciar um novo projeto com Next.js (npm) use: ```npx create-next-app@latest```")
 
+	case strings.Contains(message.Content, "!Next"):
+		discord.ChannelMessageSend(message.ChannelID,
+			"Essa é a documentação do Next.js: https://nextjs.org/docs/getting-started")
+		discord.ChannelMessageSend(message.ChannelID,
+			"Para iniciar um novo projeto com Next.js (npm) use: ```npx create-next-app@latest```")
+
 	case strings.Contains(message.Content, "!astro"):
+		discord.ChannelMessageSend(message.ChannelID,
+			"Essa é a documentação do Astro: https://docs.astro.build/pt-br/getting-started/")
+		discord.ChannelMessageSend(message.ChannelID,
+			"Para iniciar um novo projeto com Astro (npm) use: ```npm create astro@latest```")
+
+	case strings.Contains(message.Content, "!Astro"):
 		discord.ChannelMessageSend(message.ChannelID,
 			"Essa é a documentação do Astro: https://docs.astro.build/pt-br/getting-started/")
 		discord.ChannelMessageSend(message.ChannelID,
