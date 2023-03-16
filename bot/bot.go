@@ -79,7 +79,7 @@ func newMessage(discord *discordgo.Session, message *discordgo.MessageCreate) {
 
 	case strings.Contains(message.Content, "!react"):
 		discord.ChannelMessageSend(message.ChannelID,
-			"Essa é a documentação do React: https://beta.reactjs.org/")
+			"Essa é a documentação do React: https://react.dev/")
 
 	case strings.Contains(message.Content, "!vite"):
 		discord.ChannelMessageSend(message.ChannelID,
