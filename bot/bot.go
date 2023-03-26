@@ -116,5 +116,12 @@ func newMessage(discord *discordgo.Session, message *discordgo.MessageCreate) {
 			"Essa é a documentação do Astro: https://docs.astro.build/pt-br/getting-started/")
 		discord.ChannelMessageSend(message.ChannelID,
 			"Para iniciar um novo projeto com Astro (npm) use: ```npm create astro@latest```")
+
+	case strings.Contains(message.Content, "!C#"):
+		discord.ChannelMessageSend(message.ChannelID,
+			"Essa é a documentação do C#: https://learn.microsoft.com/pt-br/dotnet/csharp/")
+	case strings.Contains(message.Content, "!.NET"):
+		discord.ChannelMessageSend(message.ChannelID,
+			"Essa é a documentação do .NET: https://learn.microsoft.com/pt-br/dotnet/")
 	}
 }
